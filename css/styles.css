@@ -1,0 +1,133 @@
+body {
+  background-color: #E0E0E0;
+  color: white;
+  font-family: 'Righteous', cursive;
+}
+
+.container-fluid {
+  display: flex;
+  flex-flow: column wrap;
+  justify-content: center;
+  align-items: center;
+}
+
+#landing {
+  display: flex;
+  flex-flow: column wrap;
+  justify-content: center;
+  align-items: center;
+}
+
+#start {
+  border-radius: 20px;
+  border: 0;
+  width: 45%;
+  font-size: 24px;
+  font-family: 'Righteous', cursive;
+  position: relative;
+}
+
+#error {
+  color: #890000;
+  position: relative;
+  bottom: 25px;
+}
+
+.circle {
+  border-radius: 50%;
+  background-color: #888;
+  width: 500px;
+  height: 500px;
+  margin-top: 30px;
+  display: flex;
+  flex-flow: column wrap;
+  justify-content: center;
+  align-items: center;
+}
+
+#instructions {
+  font-size: 24px;
+  position: relative;
+}
+
+#user-entry {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  align-items: center;
+}
+
+input {
+  border-radius: 20px;
+  padding-left: 10px;
+  width: 75px;
+  border: 0;
+  background-color: #E0E0E0;
+  color: #212121;
+  font-size: 24px;
+  font-family: 'Righteous', cursive;
+}
+
+input[type=number]::-webkit-inner-spin-button {
+  padding-right: 15px;
+}
+
+input:active, input:focus, button:active, button:focus {
+  outline: 0 !important;
+  box-shadow: none !important;
+}
+
+#colon {
+  font-size: 48px;
+  padding: 5px 10px 5px 10px;
+}
+
+#turn {
+  font-size: 72px;
+}
+
+#time-remaining {
+  font-size: 72px;
+}
+
+#switch, #new-game {
+  width: 100%;
+  background-color: #E0E0E0;
+  color: #212121;
+  border-radius: 40px;
+  font-family: 'Righteous', cursive;
+}
+
+#new-game {
+  margin-top: 10px;
+}
+
+.btn:hover {
+  background-color: black !important;
+  cursor: pointer;
+}
+
+.light:hover {
+  background-color: white !important;
+  cursor: pointer;
+}
+
+@-webkit-keyframes fadeBlack {
+  0% {background-color: #E0E0E0; color: #212121;}
+  100% {background-color: #212121; color: #E0E0E0;}
+}
+
+@-webkit-keyframes fadeWhite {
+  0% {background-color: #212121; color: #E0E0E0;}
+  100% {background-color: #E0E0E0; color: #212121;}
+}
+
+@-webkit-keyframes fadeBackgroundBlack {
+  0% {background-color: #E0E0E0; color: #E0E0E0;}
+  100% {background-color: #212121; color: #212121;}
+}
+
+@-webkit-keyframes fadeBackgroundWhite {
+  0% {background-color: #212121; color: #212121;}
+  100% {background-color: #E0E0E0; color: #E0E0E0;}
+}
