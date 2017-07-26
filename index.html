@@ -48,5 +48,25 @@
       </div>
     </div>
   </div>
+
+  <div class="hidden-default game-over-wrapper">
+    <div class="game-over v-flex main-center cross-center">
+      <h1 class="hidden-default" id="winner"></h1>
+
+      <div id="no-winner">
+        <h1>Who won?</h1>
+        <div class="form-group text-center">
+          <select name="winner-dd" id="winner-dd">
+            <option value="choose">Choose from this list</option>
+            <option value="white">White</option>
+            <option value="black">Black</option>
+            <option value="draw">Draw</option>
+            <option value="help-me-score">I'm not sure - help me!</option>
+          </select>
+          <button id="winner-select">OK</button>
+        </div>
+      </div>
+    </div>
+  </div>
 </body>
 </html>

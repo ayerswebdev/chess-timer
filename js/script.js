@@ -78,7 +78,7 @@ function Timer(time, el) {
       s = Math.floor(((endTime - now) / 1000) % 60);
       s = s < 10 ? "0" + s : s;
 
-      if((endTime - startTime) <= 0) {
+      if((endTime - now) <= 0) {
         el.text("0:00");
         clearInterval(int);
         endGame(true);
@@ -135,11 +135,21 @@ function endGame(timeRanOut) {
     //if black ran out of time, show that white won
     if($("#switch-black").css("visibility") === "visible") {
       console.log("White wins on time");
+      $("#winner").text("Time is up! White wins!");
+      $("#winner").show();
+      $("#no-winner").hide();
+      $("#timer-wrapper").fadeToggle();
+      $(".game-over-wrapper").fadeToggle();
     }
 
     //if white ran out of time, show that black won
     else {
       console.log("Black wins on time");
+      $("#winner").text("Time is up! Black wins!");
+      $("#winner").show();
+      $("#no-winner").hide();
+      $("#timer-wrapper").fadeToggle();
+      $(".game-over-wrapper").fadeToggle();
     }
   }
 
