@@ -24,7 +24,7 @@
   <div class="landing v-flex main-center cross-center">
     <h1 class="text-center">Set the total time for each player (in minutes): </h1>
     <div class="h-flex main-center">
-      <input class="text-center" id="time-setter" type="number" value="15" min="5" />
+      <input class="text-center" id="time-setter" type="number" value="15" min="2" />
       <button class="text-center" id="start-btn">Start!</button>
     </div>
   </div>
@@ -32,10 +32,12 @@
   <div class="timer-body">
     <div class="timer-white">
       <h1 id="white-countdown"></h1>
+      <div id="pause-white">Click to test pause</div>
     </div>
 
     <div class="timer-black">
       <h1 id="black-countdown"></h1>
+      <div id="pause-black">Click to test pause</div>
     </div>
   </div>
 </body>
