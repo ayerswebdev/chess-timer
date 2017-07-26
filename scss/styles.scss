@@ -1,0 +1,14 @@
+//import base styles
+@import "base/_variables.scss";
+@import "base/_mixins.scss";
+@import "base/_base.scss";
+
+//import layout styles
+@import "layout/_flex.scss";
+@import "layout/_header.scss";
+@import "layout/_footer.scss";
+@import "layout/_nav.scss";
+
+//import module styles
+@import "modules/_blocks.scss";
+@import "modules/_buttons.scss";

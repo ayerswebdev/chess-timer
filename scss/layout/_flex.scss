@@ -1,0 +1,40 @@
+.h-flex {
+  display: flex;
+  flex-direction: row;
+}
+
+.v-flex {
+  display: flex;
+  flex-direction: column;
+}
+
+.flex-wrap {
+  flex-wrap: wrap;
+}
+
+.flex-nowrap {
+  flex-wrap: nowrap;
+}
+
+.main-center {
+  justify-content: center;
+}
+
+.cross-center {
+  align-items: center;
+}
+
+.self-center {
+  align-self: center;
+}
+
+.full-adjust {
+  flex: 1 1;
+}
+
+.grow-only {
+  flex-grow: 1;
+  flex-shrink: 0;
+}
+
+// NOTE: .shrink-only class is unnecessary; flex defaults to 0 1 auto

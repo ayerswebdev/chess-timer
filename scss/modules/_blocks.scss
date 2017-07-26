@@ -1,0 +1,50 @@
+.landing {
+  width: 100vw;
+  max-width: 100%;
+  height: 100vh;
+  background: $light;
+  color: $dark;
+  z-index: 2;
+}
+
+.timer-body {
+  display: flex;
+  flex-flow: column wrap;
+  width: 100vw;
+  max-width: 100%;
+  height: 100vh;
+  font-size: 4.25em;
+}
+
+.timer-white {
+  background: $light;
+  color: $dark;
+  width: 100%;
+  height: 50vh;
+  display: flex;
+  flex-flow: column wrap;
+  justify-content: center;
+  align-items: center;
+}
+
+.timer-black {
+  background: $dark;
+  color: $light;
+  width: 100%;
+  height: 50vh;
+  display: flex;
+  flex-flow: column wrap;
+  justify-content: center;
+  align-items: center;
+}
+
+@media all and (min-aspect-ratio: 1/1) {
+  .timer-body {
+    flex-flow: row wrap;
+  }
+
+  .timer-white, .timer-black {
+    width: 50%;
+    height: 100vh;
+  }
+}

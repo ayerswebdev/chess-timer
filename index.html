@@ -1,47 +1,42 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Chess Timer</title>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Chess Timer</title>
 
-    <!--Import libraries and frameworks-->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-	  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-	  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <!--Import libraries and frameworks-->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
-    <!--Import custom fonts-->
-    <script src="https://use.fontawesome.com/589ca5c72c.js"></script>
-    <link href="https://fonts.googleapis.com/css?family=Righteous" rel="stylesheet">
+  <!--Import custom fonts-->
+  <script src="https://use.fontawesome.com/589ca5c72c.js"></script>
+  <link href="https://fonts.googleapis.com/css?family=Righteous" rel="stylesheet">
 
-    <!--Import custom CSS and JavaScript files-->
-    <script src="js/script.js"></script>
-    <link rel="stylesheet" href="css/styles.css">
+  <!--Import custom CSS and JavaScript files-->
+  <script src="js/script.js"></script>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
 
-
-  </head>
-  <body>
-    <div class="container-fluid">
-    <div class="circle">
-    <div id="landing">
-      <p id="instructions">Enter the desired time limit per turn:</p>
-      <div id="user-entry">
-        <input type="number" value="2" min="0" id="min"></input>
-        <p id="colon">:</p>
-        <input type="number" value="00" min="0" max="59" id="sec"></input>
-      </div>
-      <p id="error">Error: the time cannot be set to be zero!</p>
-      <button id="start">Start Game</button>
-    </div>
-
-    <div id="timer">
-      <p class="text-center" id="turn">White</p>
-      <p class="text-center" id="time-remaining">2:00</p>
-      <button class="btn light" id="switch">Switch Turns</button>
-      <button class = "btn light" id = "new-game">New Game</button>
+<body>
+  <div class="landing v-flex main-center cross-center">
+    <h1 class="text-center">Set the total time for each player (in minutes): </h1>
+    <div class="h-flex main-center">
+      <input class="text-center" id="time-setter" type="number" value="15" min="5" />
+      <button class="text-center" id="start-btn">Start!</button>
     </div>
   </div>
-</div>
-  </body>
+
+  <div class="timer-body">
+    <div class="timer-white">
+      <h1 id="white-countdown"></h1>
+    </div>
+
+    <div class="timer-black">
+      <h1 id="black-countdown"></h1>
+    </div>
+  </div>
+</body>
 </html>

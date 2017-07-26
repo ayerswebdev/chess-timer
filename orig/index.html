@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Chess Timer</title>
+
+    <!--Import libraries and frameworks-->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+    <!--Import custom fonts-->
+    <script src="https://use.fontawesome.com/589ca5c72c.js"></script>
+    <link href="https://fonts.googleapis.com/css?family=Righteous" rel="stylesheet">
+
+    <!--Import custom CSS and JavaScript files-->
+    <script src="js/script.js"></script>
+    <link rel="stylesheet" href="css/styles.css">
+
+
+  </head>
+  <body>
+    <div class="container-fluid">
+    <div class="circle">
+    <div id="landing">
+      <p id="instructions">Enter the desired time limit per turn:</p>
+      <div id="user-entry">
+        <input type="number" value="2" min="0" id="min"></input>
+        <p id="colon">:</p>
+        <input type="number" value="00" min="0" max="59" id="sec"></input>
+      </div>
+      <p id="error">Error: the time cannot be set to be zero!</p>
+      <button id="start">Start Game</button>
+    </div>
+
+    <div id="timer">
+      <p class="text-center" id="turn">White</p>
+      <p class="text-center" id="time-remaining">2:00</p>
+      <button class="btn light" id="switch">Switch Turns</button>
+      <button class = "btn light" id = "new-game">New Game</button>
+    </div>
+  </div>
+</div>
+  </body>
+</html>
