@@ -8,7 +8,7 @@ input {
   width: 3em;
   font-size: 2em; }
 
-input:active, input:focus {
+* {
   outline: none;
   box-shadow: 0; }
 
@@ -56,6 +56,9 @@ h1 {
   color: #262626;
   z-index: 2; }
 
+#timer-wrapper {
+  display: none; }
+
 .timer-body {
   display: flex;
   flex-flow: column wrap;
@@ -70,7 +73,7 @@ h1 {
   width: 100%;
   height: 50vh;
   display: flex;
-  flex-flow: column wrap;
+  flex-flow: column nowrap;
   justify-content: center;
   align-items: center; }
 
@@ -80,16 +83,31 @@ h1 {
   width: 100%;
   height: 50vh;
   display: flex;
-  flex-flow: column wrap;
+  flex-flow: column nowrap;
   justify-content: center;
   align-items: center; }
 
 @media all and (min-aspect-ratio: 1 / 1) {
   .timer-body {
-    flex-flow: row wrap; }
+    flex-flow: row nowrap; }
 
   .timer-white, .timer-black {
     width: 50%;
     height: 100vh; } }
+#switch-white, #end-white {
+  width: 90%;
+  background: white;
+  color: #262626;
+  border: none;
+  margin: 2px;
+  visibility: hidden; }
+
+#switch-black, #end-black {
+  width: 90%;
+  background: black;
+  color: #E0E0E0;
+  border: none;
+  margin: 2px;
+  visibility: hidden; }
 
 /*# sourceMappingURL=styles.css.map */

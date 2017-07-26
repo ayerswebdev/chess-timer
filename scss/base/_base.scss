@@ -10,7 +10,7 @@ input {
   font-size: 2em;
 }
 
-input:active, input:focus {
+* {
   outline: none;
   box-shadow: 0;
 }

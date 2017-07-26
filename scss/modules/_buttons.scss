@@ -1,0 +1,17 @@
+#switch-white, #end-white {
+  width:  90%;
+  background: white;
+  color: $dark;
+  border: none;
+  margin: 2px;
+  visibility: hidden;
+}
+
+#switch-black, #end-black {
+  width: 90%;
+  background: black;
+  color: $light;
+  border: none;
+  margin: 2px;
+  visibility: hidden;
+}
