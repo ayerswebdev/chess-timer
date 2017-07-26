@@ -137,7 +137,6 @@ function endGame(timeRanOut) {
       console.log("White wins on time");
       $("#winner-text").text("Time is up! White wins!");
       $("#winner").show();
-      $("#no-winner").hide();
       $("#timer-wrapper").fadeToggle();
       $(".game-over-wrapper").fadeToggle();
     }
@@ -155,6 +154,43 @@ function endGame(timeRanOut) {
   //if the 'End Game' button was pressed (no one ran out of time)
   else {
     console.log("Time was not up when game ended.");
+
+    $("#no-winner").show();
+    $("#timer-wrapper").fadeToggle();
+    $(".game-over-wrapper").fadeToggle();
+
+    $("#winner-select").click(function() {
+      var val = document.getElementById('winner-dd').value;
+
+      if(val == "choose") {
+        console.log("User did not choose a winner. Do nothing.");
+      }
+
+      else if(val == "white") {
+        console.log("White is the winner. Display the result.");
+        $("#winner-text").text("White wins! Play again?");
+        $("#no-winner").hide();
+        $("#winner").show();
+      }
+
+      else if(val == "black") {
+        console.log("Black is the winner. Display the result.");
+        $("#winner-text").text("Black wins! Play again?");
+        $("#no-winner").hide();
+        $("#winner").show();
+      }
+
+      else if (val == "draw") {
+        console.log("It was a draw. Display the result.");
+        $("#winner-text").text("Stalemate! Play again?");
+        $("#no-winner").hide();
+        $("#winner").show();
+      }
+
+      else {
+        console.log("User needs to score. Help them do this.");
+      }
+    });
   }
 
   //reload the page if the user wants to start a new game
