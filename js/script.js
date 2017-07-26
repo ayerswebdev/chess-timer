@@ -34,7 +34,13 @@ function Timer(time, el) {
         s = Math.floor(((endTime - now) / 1000) % 60);
         s = s < 10 ? "0" + s : s;
 
-        el.text(m + ":" + s);
+        if((endTime - now) <= 0) {
+          el.text("0:00");
+          clearInterval(int);
+          endGame(true);
+        }
+
+        else el.text(m + ":" + s);
         //console.log(m + ":" + s + " remain");
       }, 200);
     }, 750);
@@ -56,20 +62,36 @@ function Timer(time, el) {
       s = Math.floor(((endTime - now) / 1000) % 60);
       s = s < 10 ? "0" + s : s;
 
-      el.text(m + ":" + s);
+      if((endTime - startTime) <= 0) {
+        el.text("0:00");
+        clearInterval(int);
+        endGame(true);
+      }
+
+      else el.text(m + ":" + s);
       //console.log(m + ":" + s + " remain");
     }, 200);
   };
 }
 
 function addGameClickFunctions(white, black) {
-  $("#pause-white").click(function() {
+  $("#switch-white").click(function() {
     white.pause();
     !black.hasBegun ? black.start() : black.resume();
   });
 
-  $("#pause-black").click(function() {
+  $("#switch-black").click(function() {
     black.pause();
     white.resume();
   });
+}
+
+function endGame(timeRanOut) {
+  if(timeRanOut) {
+    console.log("Time ran out.");
+  }
+
+  else {
+    console.log("Time was not up when game ended.");
+  }
 }
