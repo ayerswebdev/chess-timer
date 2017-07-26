@@ -3,7 +3,10 @@ $(document).ready(function() {
     var whiteTimer = new Timer($("#time-setter").val(), $("#white-countdown"));
     var blackTimer = new Timer($("#time-setter").val(), $("#black-countdown"));
     $(".landing").fadeToggle();
+    $("#timer-wrapper").fadeToggle();
     whiteTimer.start();
+    $("#switch-white, #end-white").css("visibility", "visible");
+    $("#switch-black, #end-black").css("visibility", "hidden");
 
     addGameClickFunctions(whiteTimer, blackTimer);
   });
@@ -77,18 +80,43 @@ function Timer(time, el) {
 function addGameClickFunctions(white, black) {
   $("#switch-white").click(function() {
     white.pause();
+
+    $("#switch-white, #end-white").css("visibility", "hidden");
+    $("#switch-black, #end-black").css("visibility", "visible");
+
     !black.hasBegun ? black.start() : black.resume();
   });
 
   $("#switch-black").click(function() {
     black.pause();
+
+    $("#switch-black, #end-black").css("visibility", "hidden");
+    $("#switch-white, #end-white").css("visibility", "visible");
+
     white.resume();
+  });
+
+  $(".end-game").click(function() {
+    white.pause();
+    black.pause();
+
+    endGame(false);
   });
 }
 
 function endGame(timeRanOut) {
+
+
   if(timeRanOut) {
-    console.log("Time ran out.");
+
+    if($("#switch-black").css("visibility") === "visible") {
+      console.log("White wins on time");
+    }
+    //console.log("Time ran out.");
+
+    else {
+      console.log("Black wins on time");
+    }
   }
 
   else {
