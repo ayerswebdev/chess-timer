@@ -24,7 +24,7 @@
   <div class="landing v-flex main-center cross-center">
     <h1 class="text-center">Set the total time for each player (in minutes): </h1>
     <div class="h-flex main-center">
-      <input class="text-center" id="time-setter" type="number" value="15" min="2" />
+      <input class="text-center" id="time-setter" type="number" value="15" min="1" />
       <button class="text-center" id="start-btn">Start!</button>
     </div>
   </div>
@@ -51,9 +51,12 @@
 
   <div class="hidden-default game-over-wrapper">
     <div class="game-over v-flex main-center cross-center">
-      <h1 class="hidden-default" id="winner"></h1>
+      <div class="hidden-default text-center" id="winner">
+        <h1 id="winner-text"></h1>
+        <button id="ng-button">New Game</button>
+      </div>
 
-      <div id="no-winner">
+      <div class="hidden-default" id="no-winner">
         <h1>Who won?</h1>
         <div class="form-group text-center">
           <select name="winner-dd" id="winner-dd">

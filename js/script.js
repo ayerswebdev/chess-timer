@@ -135,7 +135,7 @@ function endGame(timeRanOut) {
     //if black ran out of time, show that white won
     if($("#switch-black").css("visibility") === "visible") {
       console.log("White wins on time");
-      $("#winner").text("Time is up! White wins!");
+      $("#winner-text").text("Time is up! White wins!");
       $("#winner").show();
       $("#no-winner").hide();
       $("#timer-wrapper").fadeToggle();
@@ -145,9 +145,8 @@ function endGame(timeRanOut) {
     //if white ran out of time, show that black won
     else {
       console.log("Black wins on time");
-      $("#winner").text("Time is up! Black wins!");
+      $("#winner-text").text("Time is up! Black wins!");
       $("#winner").show();
-      $("#no-winner").hide();
       $("#timer-wrapper").fadeToggle();
       $(".game-over-wrapper").fadeToggle();
     }
@@ -157,4 +156,9 @@ function endGame(timeRanOut) {
   else {
     console.log("Time was not up when game ended.");
   }
+
+  //reload the page if the user wants to start a new game
+  $("#ng-button").click(function() {
+    location.reload();
+  });
 }
