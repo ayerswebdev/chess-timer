@@ -159,36 +159,74 @@ function endGame(timeRanOut) {
     $("#timer-wrapper").fadeToggle();
     $(".game-over-wrapper").fadeToggle();
 
+    //when user presses OK on no-winner screen
     $("#winner-select").click(function() {
+
+      //get the value from the dropdown
       var val = document.getElementById('winner-dd').value;
 
-      if(val == "choose") {
-        console.log("User did not choose a winner. Do nothing.");
-      }
+
+      //and update the display based on that value
+      if(val == "choose");
 
       else if(val == "white") {
-        console.log("White is the winner. Display the result.");
+        console.log("Winner: White");
         $("#winner-text").text("White wins! Play again?");
         $("#no-winner").hide();
         $("#winner").show();
       }
 
       else if(val == "black") {
-        console.log("Black is the winner. Display the result.");
+        console.log("Winner: Black");
         $("#winner-text").text("Black wins! Play again?");
         $("#no-winner").hide();
         $("#winner").show();
       }
 
       else if (val == "draw") {
-        console.log("It was a draw. Display the result.");
+        console.log("Result: Draw");
         $("#winner-text").text("Stalemate! Play again?");
         $("#no-winner").hide();
         $("#winner").show();
       }
 
+      //built-in scoring function
       else {
-        console.log("User needs to score. Help them do this.");
+        console.log("User needs to score");
+
+        //hide other screens and show the scoring screen
+        $("#no-winner").hide();
+        $(".game-over-wrapper").fadeToggle();
+        $(".score-wrapper").fadeToggle();
+
+        $("#score-btn").click(function() {
+          var whiteScore = scoreGame('white');
+          var blackScore = scoreGame('black');
+
+          //if white won, then update the display to convey this information
+          if(whiteScore > blackScore) {
+            $("#winner-text").text("White wins! Final score: " + whiteScore + "-" + blackScore + ".");
+            $("#winner").show();
+            $(".score-wrapper").fadeToggle();
+            $(".game-over-wrapper").fadeToggle();
+          }
+
+          //if black won, then update the display to convey this information
+          else if(whiteScore < blackScore) {
+            $("#winner-text").text("Black wins! Final Score: " + blackScore + "-" + whiteScore + ".");
+            $("#winner").show();
+            $(".score-wrapper").fadeToggle();
+            $(".game-over-wrapper").fadeToggle();
+          }
+
+          //if the result was a draw, then update the display to convey this information
+          else {
+            $("#winner-text").text("Draw! Final Score: " + whiteScore + "-" + blackScore + ".");
+            $("#winner").show();
+            $(".score-wrapper").fadeToggle();
+            $(".game-over-wrapper").fadeToggle();
+          }
+        });
       }
     });
   }
@@ -197,4 +235,26 @@ function endGame(timeRanOut) {
   $("#ng-button").click(function() {
     location.reload();
   });
+}
+
+function scoreGame(color) {
+
+  //the five scoring pieces; if the king had been taken there would be no need to score
+  var pieces = ['pawn', 'rook', 'knight', 'bishop', 'queen'];
+  var score = 0;
+
+  //values of each scoring piece using Reinfield values
+  var indValues = [1, 5, 3, 3, 9];
+
+  for(var i = 0; i < 5; i++) {
+
+    //get the ID of the current scoring piece that we wish to evaluate
+    var elID = color + "-" + pieces[i];
+
+    //calculate the individual score and add it to the score tally
+    score += document.getElementById(elID).value * indValues[i];
+  }
+
+  console.log(color + " ended with " + score + " points.");
+  return score;
 }
