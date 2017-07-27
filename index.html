@@ -71,5 +71,29 @@
       </div>
     </div>
   </div>
+
+  <div class="hidden-default score-wrapper">
+    <div class="score-body">
+      <div class="white-scorer">
+        <h1 class="text-center">Which black pieces did white take?</h1>
+        <span class="h-flex cross-center"><p class="score-label">Pawns: </p><input type="number" id="white-pawn" value="0" min="0" max="8"></span>
+        <span class="h-flex cross-center"><p class="score-label">Rooks: </p><input type="number" id="white-rook" value="0" min="0" max="2"></span>
+        <span class="h-flex cross-center"><p class="score-label">Knights: </p><input type="number" id="white-knight" value="0" min="0" max="2"></span>
+        <span class="h-flex cross-center"><p class="score-label">Bishops: </p><input type="number" id="white-bishop" value="0" min="0" max="2"></span>
+        <span class="h-flex cross-center"><p class="score-label">Queen: </p><input type="number" id="white-queen" value="0" min="0" max="1"></span>
+      </div>
+
+      <div class="black-scorer">
+        <h1 class="text-center">Which white pieces did black take?</h1>
+        <span class="h-flex cross-center"><p class="score-label">Pawns: </p><input type="number" id="black-pawn" value="0" min="0" max="8"></span>
+        <span class="h-flex cross-center"><p class="score-label">Rooks: </p><input type="number" id="black-rook" value="0" min="0" max="2"></span>
+        <span class="h-flex cross-center"><p class="score-label">Knights: </p><input type="number" id="black-knight" value="0" min="0" max="2"></span>
+        <span class="h-flex cross-center"><p class="score-label">Bishops: </p><input type="number" id="black-bishop" value="0" min="0" max="2"></span>
+        <span class="h-flex cross-center"><p class="score-label">Queen: </p><input type="number" id="black-queen" value="0" min="0" max="1"></span>
+      </div>
+
+      <button id="score-btn">Score the game!</button>
+    </div>
+  </div>
 </body>
 </html>
