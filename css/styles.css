@@ -6,7 +6,8 @@ body {
 
 input {
   width: 3em;
-  font-size: 2em; }
+  font-size: 2em;
+  color: #262626; }
 
 * {
   outline: none;
@@ -104,11 +105,33 @@ h1 {
 #winner-dd, #winner-select {
   font-size: 1em; }
 
+.score-body {
+  width: 100vw;
+  max-width: 100%;
+  height: 100vh;
+  display: flex;
+  flex-direction: column; }
+
+.white-scorer {
+  background: #E0E0E0;
+  color: #262626;
+  width: 100%;
+  height: 50vh; }
+
+.black-scorer {
+  background: #262626;
+  color: #E0E0E0;
+  width: 100%;
+  height: 50vh; }
+
+.score-label {
+  font-size: 2em; }
+
 @media all and (min-aspect-ratio: 1 / 1) {
-  .timer-body {
+  .timer-body, .score-body {
     flex-flow: row nowrap; }
 
-  .timer-white, .timer-black {
+  .timer-white, .timer-black, .white-scorer, .black-scorer {
     width: 50%;
     height: 100vh; } }
 @media all and (min-width: 830px) {
@@ -132,5 +155,14 @@ h1 {
   border: none;
   margin: 2px;
   visibility: hidden; }
+
+#score-btn {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 40px;
+  font-size: 28px;
+  color: #262626; }
 
 /*# sourceMappingURL=styles.css.map */

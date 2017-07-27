@@ -59,12 +59,38 @@
   font-size: 1em;
 }
 
+.score-body {
+  width: 100vw;
+  max-width: 100%;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.white-scorer {
+  background: $light;
+  color: $dark;
+  width: 100%;
+  height: 50vh;
+}
+
+.black-scorer {
+  background: $dark;
+  color: $light;
+  width: 100%;
+  height: 50vh;
+}
+
+.score-label {
+  font-size: 2em;
+}
+
 @media all and (min-aspect-ratio: 1/1) {
-  .timer-body {
+  .timer-body, .score-body {
     flex-flow: row nowrap;
   }
 
-  .timer-white, .timer-black {
+  .timer-white, .timer-black, .white-scorer, .black-scorer {
     width: 50%;
     height: 100vh;
   }
